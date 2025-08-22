@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Craft & Comfort — Modern Furniture</title>
+	<meta name="description" content="Craft & Comfort offers premium, minimalist furniture. Discover sofas, chairs, tables, and decor crafted with elegance.">
+	<meta property="og:title" content="Craft & Comfort — Modern Furniture">
+	<meta property="og:description" content="Premium, minimalist furniture in monochrome elegance.">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="/">
+	<link rel="icon" href="/assets/images/logo.png">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body class="bg-white text-gray-800 opacity-0 transition-opacity duration-300">
+	<!-- Header / Nav -->
+	<header class="border-b border-gray-200 sticky top-0 z-50 bg-white/80 backdrop-blur">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="flex items-center justify-between h-16">
+				<a href="/index.html" class="flex items-center gap-3">
+					<img src="/assets/images/logo.png" alt="Craft & Comfort logo" class="h-8 w-8 object-contain" />
+					<span class="font-semibold tracking-wide">Craft & Comfort</span>
+				</a>
+				<nav class="hidden md:flex items-center gap-8">
+					<a href="/index.html" class="nav-link">Home</a>
+					<a href="/catalog.html" class="nav-link">Catalog</a>
+					<a href="/cart.html" class="nav-link">Cart</a>
+					<a href="/checkout.html" class="btn btn--black">Checkout</a>
+				</nav>
+				<button id="mobileMenuBtn" class="md:hidden p-2 border border-gray-300 rounded hover:bg-gray-50" aria-label="Open menu">
+					<span class="sr-only">Open menu</span>
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+					</svg>
+				</button>
+			</div>
+		</div>
+		<div id="mobileMenu" class="md:hidden hidden border-t border-gray-200 bg-white">
+			<div class="px-4 py-3 space-y-2">
+				<a href="/index.html" class="block nav-link">Home</a>
+				<a href="/catalog.html" class="block nav-link">Catalog</a>
+				<a href="/cart.html" class="block nav-link">Cart</a>
+				<a href="/checkout.html" class="block btn btn--black">Checkout</a>
+			</div>
+		</div>
+	</header>
+
+	<!-- Sticky Cart Button -->
+	<a href="/cart.html" class="fixed right-4 bottom-4 z-40">
+		<div class="relative">
+			<div class="btn btn--black rounded-full !px-4 !py-3 shadow-lg">Cart</div>
+			<span id="cartCount" class="absolute -top-2 -right-2 inline-flex items-center justify-center h-6 min-w-[1.5rem] px-1 rounded-full bg-black text-white text-xs font-semibold">0</span>
+		</div>
+	</a>
+
+	<main>
+		<!-- Hero -->
+		<section class="relative overflow-hidden">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 grid md:grid-cols-2 gap-10 items-center">
+				<div>
+					<h1 class="text-4xl sm:text-5xl font-semibold tracking-tight text-gray-900">Modern furniture for calm, beautiful spaces.</h1>
+					<p class="mt-6 text-gray-600 max-w-xl">Minimalist designs in a monochrome palette. Built to last, designed to impress.</p>
+					<div class="mt-8 flex gap-3">
+						<a href="/catalog.html" class="btn btn--black">Shop the catalog</a>
+						<a href="#about" class="btn btn--ghost">Learn more</a>
+					</div>
+				</div>
+				<div>
+					<div class="carousel" aria-label="Featured products">
+						<div class="carousel__track">
+							<div class="carousel__slide">
+								<img src="/assets/images/banners/hero-1.jpg" alt="Minimalist living room with monochrome sofa" class="w-full h-72 object-cover rounded-lg shadow" />
+							</div>
+							<div class="carousel__slide">
+								<img src="/assets/images/banners/hero-2.jpg" alt="Elegant dining table in black and oak" class="w-full h-72 object-cover rounded-lg shadow" />
+							</div>
+							<div class="carousel__slide">
+								<img src="/assets/images/banners/hero-3.jpg" alt="Bedroom set in gray tones" class="w-full h-72 object-cover rounded-lg shadow" />
+							</div>
+						</div>
+						<div class="carousel__dots mt-4 flex items-center gap-2 justify-center"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- About -->
+		<section id="about" class="border-t border-gray-100">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid md:grid-cols-3 gap-10 items-start">
+				<div class="md:col-span-2">
+					<h2 class="text-2xl font-semibold mb-4">Design in monochrome</h2>
+					<p class="text-gray-600">At Craft & Comfort, we obsess over timeless silhouettes and premium materials. Our monochrome approach elevates any space with effortless elegance.</p>
+				</div>
+				<div class="text-sm text-gray-500">Free shipping on orders over $200. 30-day returns.</div>
+			</div>
+		</section>
+
+		<!-- Featured Products Preview -->
+		<section class="border-t border-gray-100">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+				<div class="flex items-end justify-between mb-8">
+					<h2 class="text-2xl font-semibold">Featured products</h2>
+					<a href="/catalog.html" class="text-sm underline hover:opacity-70">View all</a>
+				</div>
+				<div id="featuredGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+			</div>
+		</section>
+	</main>
+
+	<!-- Footer -->
+	<footer class="border-t border-gray-200">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid md:grid-cols-3 gap-8">
+			<div>
+				<h3 class="font-semibold mb-3">Craft & Comfort</h3>
+				<p class="text-sm text-gray-600">Monochrome furniture for modern living.</p>
+			</div>
+			<div>
+				<h4 class="font-medium mb-3">Contact</h4>
+				<ul class="text-sm text-gray-600 space-y-1">
+					<li>Email: hello@craftandcomfort.example</li>
+					<li>Phone: 067 804 6211</li>
+					<li>WhatsApp: 067 804 6211</li>
+				</ul>
+			</div>
+			<div>
+				<h4 class="font-medium mb-3">Social</h4>
+				<div class="flex gap-4 text-sm text-gray-600">
+					<a href="#" class="hover:opacity-70">Instagram</a>
+					<a href="#" class="hover:opacity-70">Facebook</a>
+					<a href="#" class="hover:opacity-70">Pinterest</a>
+				</div>
+			</div>
+		</div>
+		<div class="text-center text-xs text-gray-500 py-6 border-t border-gray-100">© <span id="year"></span> Craft & Comfort. All rights reserved.</div>
+	</footer>
+
+	<script src="/assets/js/app.js" defer></script>
+</body>
+</html>

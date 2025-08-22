@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Checkout — Craft & Comfort</title>
+	<meta name="description" content="Complete your order with Craft & Comfort. Upload proof of payment and confirm details.">
+	<link rel="icon" href="/assets/images/logo.png">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body class="bg-white text-gray-800 opacity-0 transition-opacity duration-300">
+	<header class="border-b border-gray-200 sticky top-0 z-50 bg-white/80 backdrop-blur">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="flex items-center justify-between h-16">
+				<a href="/index.html" class="flex items-center gap-3">
+					<img src="/assets/images/logo.png" alt="Craft & Comfort logo" class="h-8 w-8 object-contain" />
+					<span class="font-semibold tracking-wide">Craft & Comfort</span>
+				</a>
+				<nav class="hidden md:flex items-center gap-8">
+					<a href="/index.html" class="nav-link">Home</a>
+					<a href="/catalog.html" class="nav-link">Catalog</a>
+					<a href="/cart.html" class="nav-link">Cart</a>
+					<a href="/checkout.html" class="btn btn--black">Checkout</a>
+				</nav>
+				<button id="mobileMenuBtn" class="md:hidden p-2 border border-gray-300 rounded hover:bg-gray-50" aria-label="Open menu">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+					</svg>
+				</button>
+			</div>
+		</div>
+		<div id="mobileMenu" class="md:hidden hidden border-t border-gray-200 bg-white">
+			<div class="px-4 py-3 space-y-2">
+				<a href="/index.html" class="block nav-link">Home</a>
+				<a href="/catalog.html" class="block nav-link">Catalog</a>
+				<a href="/cart.html" class="block nav-link">Cart</a>
+				<a href="/checkout.html" class="block btn btn--black">Checkout</a>
+			</div>
+		</div>
+	</header>
+
+	<a href="/cart.html" class="fixed right-4 bottom-4 z-40">
+		<div class="relative">
+			<div class="btn btn--black rounded-full !px-4 !py-3 shadow-lg">Cart</div>
+			<span id="cartCount" class="absolute -top-2 -right-2 inline-flex items-center justify-center h-6 min-w-[1.5rem] px-1 rounded-full bg-black text-white text-xs font-semibold">0</span>
+		</div>
+	</a>
+
+	<main>
+		<section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+			<h1 class="text-3xl font-semibold mb-6">Checkout</h1>
+			<form id="checkoutForm" name="order" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" class="space-y-6 border border-gray-200 p-6 rounded">
+				<input type="hidden" name="form-name" value="order" />
+				<p class="hidden">
+					<label>Don’t fill this out: <input name="bot-field" /></label>
+				</p>
+
+				<div class="grid sm:grid-cols-2 gap-4">
+					<div>
+						<label class="block text-sm font-medium mb-2">Full name</label>
+						<input class="input" name="name" id="name" type="text" placeholder="Your full name" required />
+					</div>
+					<div>
+						<label class="block text-sm font-medium mb-2">Email</label>
+						<input class="input" name="email" id="email" type="email" placeholder="you@example.com" required />
+					</div>
+					<div>
+						<label class="block text-sm font-medium mb-2">Phone</label>
+						<input class="input" name="phone" id="phone" type="tel" placeholder="067 804 6211" required />
+					</div>
+					<div>
+						<label class="block text-sm font-medium mb-2">Address</label>
+						<input class="input" name="address" id="address" type="text" placeholder="Street, City, ZIP" required />
+					</div>
+				</div>
+
+				<div>
+					<label class="block text-sm font-medium mb-2">Proof of payment (jpg, png, pdf)</label>
+					<input class="input" name="proof" id="proof" type="file" accept=".jpg,.jpeg,.png,.pdf" />
+				</div>
+
+				<input type="hidden" name="order-items" id="orderItemsField" />
+				<input type="hidden" name="order-total" id="orderTotalField" />
+
+				<div class="flex items-center justify-between">
+					<p class="text-sm text-gray-500">After submitting, WhatsApp will open. Please attach your proof of payment in the chat.</p>
+					<button class="btn btn--black" type="submit">Submit order</button>
+				</div>
+			</form>
+
+			<div id="checkoutSuccess" class="hidden mt-6 p-4 rounded border border-green-200 bg-green-50 text-green-700">Order submitted. Opening WhatsApp… If it doesn't open automatically, click <a id="waLinkFallback" href="#" class="underline">here</a>.</div>
+			<div id="checkoutError" class="hidden mt-6 p-4 rounded border border-red-200 bg-red-50 text-red-700">Could not submit your order. Please try again.</div>
+		</section>
+	</main>
+
+	<footer class="border-t border-gray-200">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid md:grid-cols-3 gap-8">
+			<div>
+				<h3 class="font-semibold mb-3">Craft & Comfort</h3>
+				<p class="text-sm text-gray-600">Monochrome furniture for modern living.</p>
+			</div>
+			<div>
+				<h4 class="font-medium mb-3">Contact</h4>
+				<ul class="text-sm text-gray-600 space-y-1">
+					<li>Email: hello@craftandcomfort.example</li>
+					<li>Phone: 067 804 6211</li>
+					<li>WhatsApp: 067 804 6211</li>
+				</ul>
+			</div>
+			<div>
+				<h4 class="font-medium mb-3">Social</h4>
+				<div class="flex gap-4 text-sm text-gray-600">
+					<a href="#" class="hover:opacity-70">Instagram</a>
+					<a href="#" class="hover:opacity-70">Facebook</a>
+					<a href="#" class="hover:opacity-70">Pinterest</a>
+				</div>
+			</div>
+		</div>
+		<div class="text-center text-xs text-gray-500 py-6 border-t border-gray-100">© <span id="year"></span> Craft & Comfort. All rights reserved.</div>
+	</footer>
+
+	<script src="/assets/js/app.js" defer></script>
+	<script src="/assets/js/checkout.js" defer></script>
+</body>
+</html>

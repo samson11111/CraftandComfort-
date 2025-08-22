@@ -1,0 +1,74 @@
+[
+	{
+		"id": "sofa-monochrome-1",
+		"name": "Monochrome Sofa",
+		"price": 1299.00,
+		"description": "A minimalist three-seater in durable woven fabric, perfect for modern living rooms.",
+		"category": "Sofas",
+		"dimensions": "210cm W x 90cm D x 80cm H",
+		"image": "/assets/images/furniture/sofa-1.jpg"
+	},
+	{
+		"id": "armchair-classic-1",
+		"name": "Classic Armchair",
+		"price": 549.00,
+		"description": "Supportive armchair with clean lines and soft-touch upholstery.",
+		"category": "Chairs",
+		"dimensions": "85cm W x 80cm D x 95cm H",
+		"image": "/assets/images/furniture/chair-1.jpg"
+	},
+	{
+		"id": "dining-table-ovl-1",
+		"name": "Oval Dining Table",
+		"price": 899.00,
+		"description": "Spacious oval dining table with black ash veneer and solid legs.",
+		"category": "Tables",
+		"dimensions": "200cm L x 100cm W x 75cm H",
+		"image": "/assets/images/furniture/table-1.jpg"
+	},
+	{
+		"id": "coffee-table-slab-1",
+		"name": "Slab Coffee Table",
+		"price": 299.00,
+		"description": "Low-profile coffee table with a robust slab top in charcoal finish.",
+		"category": "Tables",
+		"dimensions": "120cm L x 60cm W x 40cm H",
+		"image": "/assets/images/furniture/coffee-1.jpg"
+	},
+	{
+		"id": "shelf-grid-1",
+		"name": "Grid Bookshelf",
+		"price": 459.00,
+		"description": "Open grid bookshelf in matte black steel for a statement wall.",
+		"category": "Storage",
+		"dimensions": "90cm W x 35cm D x 180cm H",
+		"image": "/assets/images/furniture/shelf-1.jpg"
+	},
+	{
+		"id": "bed-frame-plate-1",
+		"name": "Plate Bed Frame",
+		"price": 999.00,
+		"description": "Platform bed frame in deep gray with solid wood slats.",
+		"category": "Bedroom",
+		"dimensions": "Queen",
+		"image": "/assets/images/furniture/bed-1.jpg"
+	},
+	{
+		"id": "desk-min-1",
+		"name": "Minimalist Desk",
+		"price": 449.00,
+		"description": "Clean desk with cable management and powder-coated legs.",
+		"category": "Office",
+		"dimensions": "140cm W x 70cm D x 75cm H",
+		"image": "/assets/images/furniture/desk-1.jpg"
+	},
+	{
+		"id": "lamp-arc-1",
+		"name": "Arc Floor Lamp",
+		"price": 189.00,
+		"description": "Sleek arc lamp with weighted base and adjustable shade.",
+		"category": "Lighting",
+		"dimensions": "200cm H",
+		"image": "/assets/images/furniture/lamp-1.jpg"
+	}
+]
