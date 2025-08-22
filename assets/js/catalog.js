@@ -3,7 +3,7 @@
 /** Render a single product card */
 function renderCard(p) {
 	return `
-	<a href="/product.html?id=${encodeURIComponent(p.id)}" class="card group">
+	<a href="#/product?id=${encodeURIComponent(p.id)}" class="card group">
 		<img src="${p.image}" alt="${p.name}" class="card__img group-hover:scale-[1.02] transition-transform"/>
 		<div class="card__body">
 			<h3 class="card__title">${p.name}</h3>
@@ -94,4 +94,5 @@ async function initCatalogPage() {
 	applyFilters();
 }
 
-window.addEventListener("DOMContentLoaded", initCatalogPage);
+window.Pages = window.Pages || {};
+window.Pages.catalog = initCatalogPage;

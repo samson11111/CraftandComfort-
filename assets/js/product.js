@@ -11,7 +11,7 @@ function renderProductDetail(p) {
 			<div class="text-sm text-gray-500">Dimensions: ${p.dimensions || "—"}</div>
 			<div class="flex gap-3">
 				<button id="addToCartBtn" class="btn btn--black">Add to Cart</button>
-				<a class="btn btn--ghost" href="/catalog.html">Back to catalog</a>
+				<a class="btn btn--ghost" href="#/catalog">Back to catalog</a>
 			</div>
 		</div>
 	</div>`;
@@ -41,4 +41,5 @@ async function initProductPage() {
 	}
 }
 
-window.addEventListener("DOMContentLoaded", initProductPage);
+window.Pages = window.Pages || {};
+window.Pages.product = initProductPage;
