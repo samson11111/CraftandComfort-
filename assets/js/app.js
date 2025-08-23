@@ -74,7 +74,15 @@ function formatPrice(value) { return `$${value.toFixed(2)}`; }
 
 /** Query helper */
 function getQueryParam(name) {
-	const params = new URLSearchParams(window.location.search);
+	const search = window.location.search;
+	const hash = window.location.hash || "";
+	let paramsStr = "";
+	if (hash.includes("?")) {
+		paramsStr = hash.split("?")[1];
+	} else {
+		paramsStr = search.startsWith("?") ? search.slice(1) : "";
+	}
+	const params = new URLSearchParams(paramsStr);
 	return params.get(name);
 }
 
@@ -119,7 +127,7 @@ async function initFeaturedGrid() {
 		const products = await fetchProducts();
 		const featured = products.slice(0, 4);
 		grid.innerHTML = featured.map(p => `
-			<a href="/product.html?id=${encodeURIComponent(p.id)}" class="card group">
+			<a href="#/product?id=${encodeURIComponent(p.id)}" class="card group">
 				<img src="${p.image}" alt="${p.name}" class="card__img group-hover:scale-[1.02] transition-transform"/>
 				<div class="card__body">
 					<h3 class="card__title">${p.name}</h3>
@@ -149,8 +157,36 @@ window.CC = {
 	getCartSubtotal, fetchProducts, formatPrice, getQueryParam, updateCartCount
 };
 
+// --- Simple hash router for single-page app ---
+function showView(target) {
+	const views = document.querySelectorAll('[data-view]');
+	views.forEach(v => v.classList.add('hidden'));
+	const el = document.querySelector(`[data-view="${target}"]`);
+	if (el) el.classList.remove('hidden');
+}
+
+function route() {
+	const raw = window.location.hash || '#/home';
+	const [pathPart] = raw.replace(/^#\//, '').split('?');
+	const path = pathPart || 'home';
+	showView(path);
+	if (path === 'home') {
+		initCarousel();
+		initFeaturedGrid();
+	} else if (path === 'catalog') {
+		window.Pages && typeof window.Pages.catalog === 'function' && window.Pages.catalog();
+	} else if (path === 'product') {
+		window.Pages && typeof window.Pages.product === 'function' && window.Pages.product();
+	} else if (path === 'cart') {
+		window.Pages && typeof window.Pages.cart === 'function' && window.Pages.cart();
+	} else if (path === 'checkout') {
+		window.Pages && typeof window.Pages.checkout === 'function' && window.Pages.checkout();
+	}
+	window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
 window.addEventListener("DOMContentLoaded", () => {
 	initCommonUI();
-	initCarousel();
-	initFeaturedGrid();
+	window.addEventListener('hashchange', route);
+	route();
 });

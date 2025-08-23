@@ -51,4 +51,9 @@ function renderCart() {
 	});
 }
 
-window.addEventListener("DOMContentLoaded", renderCart);
+function initCartPage() {
+	renderCart();
+}
+
+window.Pages = window.Pages || {};
+window.Pages.cart = initCartPage;

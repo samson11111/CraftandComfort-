@@ -18,15 +18,15 @@
 	<header class="border-b border-gray-200 sticky top-0 z-50 bg-white/80 backdrop-blur">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="flex items-center justify-between h-16">
-				<a href="/index.html" class="flex items-center gap-3">
+				<a href="#/home" class="flex items-center gap-3">
 					<img src="/assets/images/logo.png" alt="Craft & Comfort logo" class="h-8 w-8 object-contain" />
 					<span class="font-semibold tracking-wide">Craft & Comfort</span>
 				</a>
 				<nav class="hidden md:flex items-center gap-8">
-					<a href="/index.html" class="nav-link">Home</a>
-					<a href="/catalog.html" class="nav-link">Catalog</a>
-					<a href="/cart.html" class="nav-link">Cart</a>
-					<a href="/checkout.html" class="btn btn--black">Checkout</a>
+					<a href="#/home" class="nav-link">Home</a>
+					<a href="#/catalog" class="nav-link">Catalog</a>
+					<a href="#/cart" class="nav-link">Cart</a>
+					<a href="#/checkout" class="btn btn--black">Checkout</a>
 				</nav>
 				<button id="mobileMenuBtn" class="md:hidden p-2 border border-gray-300 rounded hover:bg-gray-50" aria-label="Open menu">
 					<span class="sr-only">Open menu</span>
@@ -38,16 +38,16 @@
 		</div>
 		<div id="mobileMenu" class="md:hidden hidden border-t border-gray-200 bg-white">
 			<div class="px-4 py-3 space-y-2">
-				<a href="/index.html" class="block nav-link">Home</a>
-				<a href="/catalog.html" class="block nav-link">Catalog</a>
-				<a href="/cart.html" class="block nav-link">Cart</a>
-				<a href="/checkout.html" class="block btn btn--black">Checkout</a>
+				<a href="#/home" class="block nav-link">Home</a>
+				<a href="#/catalog" class="block nav-link">Catalog</a>
+				<a href="#/cart" class="block nav-link">Cart</a>
+				<a href="#/checkout" class="block btn btn--black">Checkout</a>
 			</div>
 		</div>
 	</header>
 
 	<!-- Sticky Cart Button -->
-	<a href="/cart.html" class="fixed right-4 bottom-4 z-40">
+	<a href="#/cart" class="fixed right-4 bottom-4 z-40">
 		<div class="relative">
 			<div class="btn btn--black rounded-full !px-4 !py-3 shadow-lg">Cart</div>
 			<span id="cartCount" class="absolute -top-2 -right-2 inline-flex items-center justify-center h-6 min-w-[1.5rem] px-1 rounded-full bg-black text-white text-xs font-semibold">0</span>
@@ -55,56 +55,176 @@
 	</a>
 
 	<main>
-		<!-- Hero -->
-		<section class="relative overflow-hidden">
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 grid md:grid-cols-2 gap-10 items-center">
-				<div>
-					<h1 class="text-4xl sm:text-5xl font-semibold tracking-tight text-gray-900">Modern furniture for calm, beautiful spaces.</h1>
-					<p class="mt-6 text-gray-600 max-w-xl">Minimalist designs in a monochrome palette. Built to last, designed to impress.</p>
-					<div class="mt-8 flex gap-3">
-						<a href="/catalog.html" class="btn btn--black">Shop the catalog</a>
-						<a href="#about" class="btn btn--ghost">Learn more</a>
-					</div>
-				</div>
-				<div>
-					<div class="carousel" aria-label="Featured products">
-						<div class="carousel__track">
-							<div class="carousel__slide">
-								<img src="/assets/images/banners/hero-1.jpg" alt="Minimalist living room with monochrome sofa" class="w-full h-72 object-cover rounded-lg shadow" />
-							</div>
-							<div class="carousel__slide">
-								<img src="/assets/images/banners/hero-2.jpg" alt="Elegant dining table in black and oak" class="w-full h-72 object-cover rounded-lg shadow" />
-							</div>
-							<div class="carousel__slide">
-								<img src="/assets/images/banners/hero-3.jpg" alt="Bedroom set in gray tones" class="w-full h-72 object-cover rounded-lg shadow" />
-							</div>
+		<!-- View: Home -->
+		<section data-view="home">
+			<!-- Hero -->
+			<section class="relative overflow-hidden">
+				<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 grid md:grid-cols-2 gap-10 items-center">
+					<div>
+						<h1 class="text-4xl sm:text-5xl font-semibold tracking-tight text-gray-900">Modern furniture for calm, beautiful spaces.</h1>
+						<p class="mt-6 text-gray-600 max-w-xl">Minimalist designs in a monochrome palette. Built to last, designed to impress.</p>
+						<div class="mt-8 flex gap-3">
+							<a href="#/catalog" class="btn btn--black">Shop the catalog</a>
+							<a href="#about" class="btn btn--ghost">Learn more</a>
 						</div>
-						<div class="carousel__dots mt-4 flex items-center gap-2 justify-center"></div>
+					</div>
+					<div>
+						<div class="carousel" aria-label="Featured products">
+							<div class="carousel__track">
+								<div class="carousel__slide">
+									<img src="/assets/images/banners/hero-1.jpg" alt="Minimalist living room with monochrome sofa" class="w-full h-72 object-cover rounded-lg shadow" />
+								</div>
+								<div class="carousel__slide">
+									<img src="/assets/images/banners/hero-2.jpg" alt="Elegant dining table in black and oak" class="w-full h-72 object-cover rounded-lg shadow" />
+								</div>
+								<div class="carousel__slide">
+									<img src="/assets/images/banners/hero-3.jpg" alt="Bedroom set in gray tones" class="w-full h-72 object-cover rounded-lg shadow" />
+								</div>
+							</div>
+							<div class="carousel__dots mt-4 flex items-center gap-2 justify-center"></div>
+						</div>
 					</div>
 				</div>
-			</div>
+			</section>
+
+			<!-- About -->
+			<section id="about" class="border-t border-gray-100">
+				<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid md:grid-cols-3 gap-10 items-start">
+					<div class="md:col-span-2">
+						<h2 class="text-2xl font-semibold mb-4">Design in monochrome</h2>
+						<p class="text-gray-600">At Craft & Comfort, we obsess over timeless silhouettes and premium materials. Our monochrome approach elevates any space with effortless elegance.</p>
+					</div>
+					<div class="text-sm text-gray-500">Free shipping on orders over $200. 30-day returns.</div>
+				</div>
+			</section>
+
+			<!-- Featured Products Preview -->
+			<section class="border-t border-gray-100">
+				<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+					<div class="flex items-end justify-between mb-8">
+						<h2 class="text-2xl font-semibold">Featured products</h2>
+						<a href="#/catalog" class="text-sm underline hover:opacity-70">View all</a>
+					</div>
+					<div id="featuredGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+				</div>
+			</section>
 		</section>
 
-		<!-- About -->
-		<section id="about" class="border-t border-gray-100">
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid md:grid-cols-3 gap-10 items-start">
-				<div class="md:col-span-2">
-					<h2 class="text-2xl font-semibold mb-4">Design in monochrome</h2>
-					<p class="text-gray-600">At Craft & Comfort, we obsess over timeless silhouettes and premium materials. Our monochrome approach elevates any space with effortless elegance.</p>
+		<!-- View: Catalog -->
+		<section data-view="catalog" class="hidden">
+			<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+				<h1 class="text-3xl font-semibold mb-6">Catalog</h1>
+				<div class="grid grid-cols-1 lg:grid-cols-[280px,1fr] gap-8">
+					<aside class="space-y-6">
+						<div>
+							<label class="block text-sm font-medium mb-2">Search</label>
+							<input id="searchInput" type="text" placeholder="Search products..." class="input" />
+						</div>
+						<div>
+							<label class="block text-sm font-medium mb-2">Category</label>
+							<select id="categoryFilter" class="input">
+								<option value="">All</option>
+							</select>
+						</div>
+						<div>
+							<label class="block text-sm font-medium mb-2">Max price ($)</label>
+							<input id="priceFilter" type="range" min="0" max="3000" value="3000" class="w-full">
+							<div class="text-xs text-gray-500 mt-1">Up to: $<span id="priceFilterValue">3000</span></div>
+						</div>
+						<button id="clearFilters" class="btn btn--ghost w-full">Clear filters</button>
+					</aside>
+					<section>
+						<div id="catalogGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+						<div id="catalogError" class="hidden mt-6 p-4 border border-red-200 text-red-700 bg-red-50 rounded">Failed to load products. Please try again.</div>
+					</section>
 				</div>
-				<div class="text-sm text-gray-500">Free shipping on orders over $200. 30-day returns.</div>
-			</div>
+			</section>
 		</section>
 
-		<!-- Featured Products Preview -->
-		<section class="border-t border-gray-100">
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-				<div class="flex items-end justify-between mb-8">
-					<h2 class="text-2xl font-semibold">Featured products</h2>
-					<a href="/catalog.html" class="text-sm underline hover:opacity-70">View all</a>
+		<!-- View: Product -->
+		<section data-view="product" class="hidden">
+			<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10" id="productSection">
+				<div id="productSkeleton" class="grid md:grid-cols-2 gap-10">
+					<div class="skeleton h-80 rounded"></div>
+					<div class="space-y-4">
+						<div class="skeleton h-8 w-2/3 rounded"></div>
+						<div class="skeleton h-6 w-1/3 rounded"></div>
+						<div class="skeleton h-24 w-full rounded"></div>
+						<div class="skeleton h-10 w-40 rounded"></div>
+					</div>
 				</div>
-				<div id="featuredGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
-			</div>
+				<div id="productContent" class="hidden"></div>
+				<div id="productError" class="hidden mt-6 p-4 border border-red-200 text-red-700 bg-red-50 rounded">Failed to load product. <a href="#/catalog" class="underline">Back to catalog</a>.</div>
+			</section>
+		</section>
+
+		<!-- View: Cart -->
+		<section data-view="cart" class="hidden">
+			<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+				<h1 class="text-3xl font-semibold mb-6">Your cart</h1>
+				<div class="grid grid-cols-1 lg:grid-cols-[1fr,360px] gap-8">
+					<div>
+						<div id="cartItems" class="divide-y divide-gray-200"></div>
+						<div id="emptyCart" class="hidden text-gray-500">Your cart is empty. <a href="#/catalog" class="underline">Browse products</a>.</div>
+					</div>
+					<aside class="border border-gray-200 rounded p-4 h-max">
+						<div class="flex items-center justify-between">
+							<span class="text-gray-600">Subtotal</span>
+							<span id="cartSubtotal" class="font-medium">$0.00</span>
+						</div>
+						<p class="text-xs text-gray-500 mt-2">Shipping and taxes calculated at checkout.</p>
+						<a href="#/checkout" class="btn btn--black w-full mt-4">Proceed to Checkout</a>
+					</aside>
+				</div>
+			</section>
+		</section>
+
+		<!-- View: Checkout -->
+		<section data-view="checkout" class="hidden">
+			<section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+				<h1 class="text-3xl font-semibold mb-6">Checkout</h1>
+				<form id="checkoutForm" name="order" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" class="space-y-6 border border-gray-200 p-6 rounded">
+					<input type="hidden" name="form-name" value="order" />
+					<p class="hidden">
+						<label>Don’t fill this out: <input name="bot-field" /></label>
+					</p>
+
+					<div class="grid sm:grid-cols-2 gap-4">
+						<div>
+							<label class="block text-sm font-medium mb-2">Full name</label>
+							<input class="input" name="name" id="name" type="text" placeholder="Your full name" required />
+						</div>
+						<div>
+							<label class="block text-sm font-medium mb-2">Email</label>
+							<input class="input" name="email" id="email" type="email" placeholder="you@example.com" required />
+						</div>
+						<div>
+							<label class="block text-sm font-medium mb-2">Phone</label>
+							<input class="input" name="phone" id="phone" type="tel" placeholder="067 804 6211" required />
+						</div>
+						<div>
+							<label class="block text-sm font-medium mb-2">Address</label>
+							<input class="input" name="address" id="address" type="text" placeholder="Street, City, ZIP" required />
+						</div>
+					</div>
+
+					<div>
+						<label class="block text-sm font-medium mb-2">Proof of payment (jpg, png, pdf)</label>
+						<input class="input" name="proof" id="proof" type="file" accept=".jpg,.jpeg,.png,.pdf" />
+					</div>
+
+					<input type="hidden" name="order-items" id="orderItemsField" />
+					<input type="hidden" name="order-total" id="orderTotalField" />
+
+					<div class="flex items-center justify-between">
+						<p class="text-sm text-gray-500">After submitting, WhatsApp will open. Please attach your proof of payment in the chat.</p>
+						<button class="btn btn--black" type="submit">Submit order</button>
+					</div>
+				</form>
+
+				<div id="checkoutSuccess" class="hidden mt-6 p-4 rounded border border-green-200 bg-green-50 text-green-700">Order submitted. Opening WhatsApp… If it doesn't open automatically, click <a id="waLinkFallback" href="#" class="underline">here</a>.</div>
+				<div id="checkoutError" class="hidden mt-6 p-4 rounded border border-red-200 bg-red-50 text-red-700">Could not submit your order. Please try again.</div>
+			</section>
 		</section>
 	</main>
 
@@ -136,5 +256,9 @@
 	</footer>
 
 	<script src="/assets/js/app.js" defer></script>
+	<script src="/assets/js/catalog.js" defer></script>
+	<script src="/assets/js/product.js" defer></script>
+	<script src="/assets/js/cart.js" defer></script>
+	<script src="/assets/js/checkout.js" defer></script>
 </body>
 </html>

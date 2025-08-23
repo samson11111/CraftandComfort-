@@ -68,4 +68,5 @@ function initCheckout() {
 	if (form) form.addEventListener("submit", handleCheckoutSubmit);
 }
 
-window.addEventListener("DOMContentLoaded", initCheckout);
+window.Pages = window.Pages || {};
+window.Pages.checkout = initCheckout;
